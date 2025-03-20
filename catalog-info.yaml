@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: s56dshlmq-nodejs-gitops
+  description: This is GitOps manifest for s56dshlmq-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=s56dshlmq-nodejs
+    backstage.io/kubernetes-id: s56dshlmq-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: s56dshlmq-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:s56dshlmq-nodejs
